@@ -2,6 +2,13 @@
   globals.mapleader = " ";
 
   keymaps = [
+
+    {
+      mode = "n";
+      key = "<C-s>";
+      action = "<CMD> wa <CR>";
+    }
+
     # General maps
     {
       mode = "n";
@@ -371,6 +378,21 @@
       action = "<CMD> Grapple select index=4<CR>";
       options = { desc = "Grapple Select 4"; };
     }
+
+    {
+      mode = "n";
+      key = "s";
+      action = "<CMD>HopChar2<CR>";
+      options = { silent = true; };
+    }
+
+    {
+      mode = "n";
+      key = "S";
+      action = "<CMD>HopWord<CR>";
+      options = { silent = true; };
+    }
+
   ];
   extraConfigLua = ''
     function ToggleLineNumber()

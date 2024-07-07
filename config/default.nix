@@ -64,6 +64,7 @@
     ./plug/utils/whichkey.nix
     ./plug/utils/yaml-companion.nix
   ];
+
   options = {
     theme = lib.mkOption {
       default = lib.mkDefault "paradise";
@@ -75,6 +76,13 @@
     };
   };
   config = {
+
+    extraPlugins = with pkgs.vimPlugins; [
+      hop-nvim
+    ];
+    plugins = {
+      hop-nvim.enabled = true;
+    };
     # The base16 theme to use, if you want to use another theme, change it in colorscheme.nix
     theme = "paradise";
     extraConfigLua = ''
